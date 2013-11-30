@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58E915111847DFDF0022100A /* DisplayFinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E915041847DFDF0022100A /* DisplayFinanceViewController.m */; };
+		58E915121847DFDF0022100A /* expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E915061847DFDF0022100A /* expense.m */; };
+		58E915131847DFDF0022100A /* ExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E915081847DFDF0022100A /* ExpenseViewController.m */; };
+		58E915141847DFDF0022100A /* FinanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E9150A1847DFDF0022100A /* FinanceTableViewController.m */; };
+		58E915151847DFDF0022100A /* FinanceTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E9150C1847DFDF0022100A /* FinanceTypeViewController.m */; };
+		58E915161847DFDF0022100A /* IncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E9150E1847DFDF0022100A /* IncomeViewController.m */; };
+		58E915171847DFDF0022100A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E915101847DFDF0022100A /* ViewController.m */; };
+		58E915191847E0250022100A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58E915181847E0250022100A /* Main.storyboard */; };
+		58E9151C1847E3210022100A /* income.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E9151B1847E3210022100A /* income.m */; };
 		58FB65911847D1110066CC1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FB65901847D1110066CC1E /* Foundation.framework */; };
 		58FB65931847D1110066CC1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FB65921847D1110066CC1E /* CoreGraphics.framework */; };
 		58FB65951847D1110066CC1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FB65941847D1110066CC1E /* UIKit.framework */; };
@@ -35,6 +44,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58E915031847DFDF0022100A /* DisplayFinanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayFinanceViewController.h; sourceTree = "<group>"; };
+		58E915041847DFDF0022100A /* DisplayFinanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayFinanceViewController.m; sourceTree = "<group>"; };
+		58E915051847DFDF0022100A /* expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expense.h; sourceTree = "<group>"; };
+		58E915061847DFDF0022100A /* expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = expense.m; sourceTree = "<group>"; };
+		58E915071847DFDF0022100A /* ExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseViewController.h; sourceTree = "<group>"; };
+		58E915081847DFDF0022100A /* ExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseViewController.m; sourceTree = "<group>"; };
+		58E915091847DFDF0022100A /* FinanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceTableViewController.h; sourceTree = "<group>"; };
+		58E9150A1847DFDF0022100A /* FinanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceTableViewController.m; sourceTree = "<group>"; };
+		58E9150B1847DFDF0022100A /* FinanceTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceTypeViewController.h; sourceTree = "<group>"; };
+		58E9150C1847DFDF0022100A /* FinanceTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceTypeViewController.m; sourceTree = "<group>"; };
+		58E9150D1847DFDF0022100A /* IncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeViewController.h; sourceTree = "<group>"; };
+		58E9150E1847DFDF0022100A /* IncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeViewController.m; sourceTree = "<group>"; };
+		58E9150F1847DFDF0022100A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		58E915101847DFDF0022100A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		58E915181847E0250022100A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		58E9151A1847E3210022100A /* income.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = income.h; sourceTree = "<group>"; };
+		58E9151B1847E3210022100A /* income.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = income.m; sourceTree = "<group>"; };
 		58FB658D1847D1110066CC1E /* APFinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APFinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FB65901847D1110066CC1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58FB65921847D1110066CC1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +107,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58E9151D1847E3300022100A /* M */ = {
+			isa = PBXGroup;
+			children = (
+				58E9151A1847E3210022100A /* income.h */,
+				58E9151B1847E3210022100A /* income.m */,
+				58E915051847DFDF0022100A /* expense.h */,
+				58E915061847DFDF0022100A /* expense.m */,
+			);
+			name = M;
+			sourceTree = "<group>";
+		};
+		58E9151E1847E3430022100A /* V */ = {
+			isa = PBXGroup;
+			children = (
+				58E915181847E0250022100A /* Main.storyboard */,
+			);
+			name = V;
+			sourceTree = "<group>";
+		};
+		58E9151F1847E8E50022100A /* inputViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				58E915071847DFDF0022100A /* ExpenseViewController.h */,
+				58E915081847DFDF0022100A /* ExpenseViewController.m */,
+				58E9150D1847DFDF0022100A /* IncomeViewController.h */,
+				58E9150E1847DFDF0022100A /* IncomeViewController.m */,
+			);
+			name = inputViewControllers;
+			sourceTree = "<group>";
+		};
+		58E915201847E9090022100A /* C */ = {
+			isa = PBXGroup;
+			children = (
+				58E9151F1847E8E50022100A /* inputViewControllers */,
+				58E915031847DFDF0022100A /* DisplayFinanceViewController.h */,
+				58E915041847DFDF0022100A /* DisplayFinanceViewController.m */,
+				58E915091847DFDF0022100A /* FinanceTableViewController.h */,
+				58E9150A1847DFDF0022100A /* FinanceTableViewController.m */,
+				58E9150B1847DFDF0022100A /* FinanceTypeViewController.h */,
+				58E9150C1847DFDF0022100A /* FinanceTypeViewController.m */,
+				58E9150F1847DFDF0022100A /* ViewController.h */,
+				58E915101847DFDF0022100A /* ViewController.m */,
+			);
+			name = C;
+			sourceTree = "<group>";
+		};
 		58FB65841847D1100066CC1E = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +187,12 @@
 		58FB65981847D1110066CC1E /* APFinanceApp */ = {
 			isa = PBXGroup;
 			children = (
+				58E9151D1847E3300022100A /* M */,
 				58FB65A11847D1110066CC1E /* AppDelegate.h */,
 				58FB65A21847D1110066CC1E /* AppDelegate.m */,
 				58FB65A71847D1110066CC1E /* Images.xcassets */,
+				58E9151E1847E3430022100A /* V */,
+				58E915201847E9090022100A /* C */,
 				58FB65A41847D1110066CC1E /* APFinanceApp.xcdatamodeld */,
 				58FB65991847D1110066CC1E /* Supporting Files */,
 			);
@@ -228,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E915191847E0250022100A /* Main.storyboard in Resources */,
 				58FB659D1847D1110066CC1E /* InfoPlist.strings in Resources */,
 				58FB65A81847D1110066CC1E /* Images.xcassets in Resources */,
 			);
@@ -249,8 +325,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				58FB65A31847D1110066CC1E /* AppDelegate.m in Sources */,
+				58E915121847DFDF0022100A /* expense.m in Sources */,
 				58FB65A61847D1110066CC1E /* APFinanceApp.xcdatamodeld in Sources */,
+				58E915151847DFDF0022100A /* FinanceTypeViewController.m in Sources */,
+				58E915171847DFDF0022100A /* ViewController.m in Sources */,
+				58E915111847DFDF0022100A /* DisplayFinanceViewController.m in Sources */,
 				58FB659F1847D1110066CC1E /* main.m in Sources */,
+				58E915141847DFDF0022100A /* FinanceTableViewController.m in Sources */,
+				58E915131847DFDF0022100A /* ExpenseViewController.m in Sources */,
+				58E915161847DFDF0022100A /* IncomeViewController.m in Sources */,
+				58E9151C1847E3210022100A /* income.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +535,7 @@
 				58FB65C11847D1110066CC1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58FB65C21847D1110066CC1E /* Build configuration list for PBXNativeTarget "APFinanceAppTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +544,7 @@
 				58FB65C41847D1110066CC1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

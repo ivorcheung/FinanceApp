@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Expense" syncable="YES">
+        <attribute name="expenseAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="expenseCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expenseDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="expenseID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Income" syncable="YES">
+        <attribute name="incomeAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="incomeCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="incomeDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="incomeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Income" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Expense" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
 </model>
