@@ -10,4 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
+@property (weak, nonatomic) IBOutlet UIButton *incomeButton;
+@property (weak, nonatomic) IBOutlet UIButton *expenseButton;
+
+
 @end

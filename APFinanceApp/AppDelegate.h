@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IncomeTableViewController.h"
+#import "ExpenseTableViewController.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -7,8 +7,7 @@
 //
 
 #import "IncomeViewController.h"
-#import "DisplayFinanceViewController.h"
-
+#import "DisplayIncomeViewController.h"
 
 @interface IncomeViewController ()
 
@@ -16,12 +15,9 @@
 
 @implementation IncomeViewController
 
-@synthesize objectArray, dateOfInput, categoryOfInput, amountOfInput, incomeDate, incomeAmount, incomeCategory, datePicker, incomeTemporaryDate, dateFormat, managedObjectContext;
+@synthesize dateField, amountField, categoryField, datePicker, dateOfInput, dateFormat, managedObjectContext, logo;
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    
-}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,180 +32,150 @@
 {
     [super viewDidLoad];
 
-    self.incomeDate.delegate = self;
+    self.dateField.delegate = self; //adding the uitextfield delegate and declaring it as self.
+
+    [self dateKeyboard]; //adding the dateKeyboard
     
-    NSDate *today = [[NSDate alloc]init];
-    today = [NSDate date]; //returns an instance type of NSDate for today's date
+    UIImage *logoImage = [UIImage imageNamed:@"scale.png"]; //setting the UIImage object.
+    [logo setImage:logoImage];
     
-    [self dateKeyboard];
-    
-    
+    //setting the initial values of the textfields to the attributes.
     dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"d MMM yyyy"];
-    NSString *todayDate = [dateFormat stringFromDate:today];
-    
-    
-    
-    NSLog(@"Date = %@",todayDate);
+    [dateFormat setDateFormat:@"dd-MMM-yyyy"];
 
-    [incomeDate setText:todayDate];
-
+    dateField.text = [dateFormat stringFromDate:[[self income]incomeDate]];
+    categoryField.text = [[self income]incomeCategory];
+    
+    NSNumberFormatter *numberFormat = [[NSNumberFormatter alloc]init];
+    [numberFormat setNumberStyle:NSNumberFormatterDecimalStyle];
+    amountField.text = [numberFormat stringFromNumber:[[self income]incomeAmount]];
 }
 
+//this code was heavily influenced from (Rea [Online] 2012).
 -(UIDatePicker *) dateKeyboard //method to override keyboard and display date picker instead.
 {
     
-    datePicker = [[UIDatePicker alloc]init];
-    datePicker.datePickerMode = UIDatePickerModeDate;
-    incomeDate.inputView = datePicker;
-    incomeDate.inputAccessoryView = [self dateKeyboardBar];
+    datePicker = [[UIDatePicker alloc]init]; //allocating memory and initialising the datePicker
+    datePicker.datePickerMode = UIDatePickerModeDate; // setting the date pickerMode to just date selection format
+    [datePicker setDate:[[self income]incomeDate]]; //setting the default date of the picker to the income date (today's date by default)
+    dateField.inputView = datePicker; //setting the dateField's keyboard as the datepicker
+    dateField.inputAccessoryView = [self dateKeyboardBar]; //setting an accessory bar at the top of the datePicker
     [datePicker addTarget:self action:@selector(settingDate) forControlEvents:UIControlEventValueChanged];
+    //the above method call specifies a target/action for the particular called event.
+    //so if the date is chosen of another date - and the selector is chosed (settingDate method) - it will change the value of the dateField.
     
     return datePicker;
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)settingDate{ // method to set the date.
+    
+    dateFormat = [[NSDateFormatter alloc]init]; //using a date formatter to formate the date to string for dateField.
+    [dateFormat setDateFormat:@"dd-MMM-yyyy"];
+    dateOfInput = [datePicker date];
+    dateField.text = [dateFormat stringFromDate:[datePicker date]];
+    
 }
-
-
-
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    
-    incomeDate = textField;
-    
-    return YES;
-}
-
-/*
-
--(void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    
-    if ([[incomeAmount text]length] == 0){
-        incomeAmount.text = [[NSLocale currentLocale]objectForKey:NSLocaleCurrencySymbol];
-    }
-}
-
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    
-    NSString *currencyPlaceholder = [incomeAmount.text stringByReplacingCharactersInRange:range withString:string];
-    
-    if (![currencyPlaceholder hasPrefix:[[NSLocale currentLocale]objectForKey:NSLocaleCurrencySymbol]]) {
-        return NO;
-    }
-    
-    return YES;
-}
-  */
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
-    [textField resignFirstResponder];
-    
-    return YES;
-}
- 
-- (IBAction)hideKeyboard:(id)sender {
-    
-    [incomeDate resignFirstResponder];
-    [incomeCategory resignFirstResponder];
-    [incomeAmount resignFirstResponder];
-}
-
 
 -(UIToolbar*)dateKeyboardBar {
-    //Create and configure toolbar that holds "Done button"
-    UIToolbar *toolBar = [[UIToolbar alloc] init];
-    toolBar.barStyle = UIBarStyleBlack;
-    [toolBar sizeToFit];
+    //Create and configure toolbar that holds "Set button" for adding the date to dateField
+    UIToolbar *toolBar = [[UIToolbar alloc] init]; //allocate memory and initialise UIToolBar
+    toolBar.barTintColor = [UIColor colorWithRed:0.498 green:0.549 blue:0.553 alpha:1.0]; //Converted UI Color - see acknowledgements.
+    [toolBar sizeToFit]; //fits the toolbar to the size of the subview
     
     UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc]
                                           initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                           target:nil
-                                          action:nil];
+                                          action:nil];      //initialise a BarButtonItem of a flexible space kind - this basically generates empty space.
     
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Add Date"
-                                                                   style:UIBarButtonItemStyleBordered
-                                                                  target:self
-                                                                  action:@selector(doneButtonPressed)];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Set"     //adding a BarButtonItem with the title "set" to set the date
+                                                                   style:UIBarButtonItemStylePlain  //with a plain button style
+                                                                  target:self                       //target of self object
+                                                                  action:@selector(doneButtonPressed)]; //and it will trigger this method when it is pressed
     
-    [toolBar setItems:[NSArray arrayWithObjects:flexibleSpaceLeft, doneButton, nil]];
+    [toolBar setItems:[NSArray arrayWithObjects:flexibleSpaceLeft, doneButton, nil]];   //set the following items onto the toolbar.
     
     return toolBar;
 }
 
 -(void)doneButtonPressed {
     
-    [incomeDate setText:[dateFormat stringFromDate:[datePicker date]]];
-    [[self view]endEditing:YES];
+    [dateField setText:[dateFormat stringFromDate:[datePicker date]]];  //sets the datefield's text as the datepicker chosen date.
+    [[self view]endEditing:YES];        //ends editing and dismisses the firstResponder - thus dismissing the datePicker
     
 }
 
--(void)settingDate{
-    
-    dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"d MMM yyyy"];
-    dateOfInput = [datePicker date];
-    incomeDate.text = [dateFormat stringFromDate:[datePicker date]];
-    incomeDate.placeholder = [dateFormat stringFromDate:[datePicker date]];
-    //format NSString of DateTextField to NSDate
-    
-    }
 
-/* boilerplate code from apple
-- (void)insertNewObject:(id)sender
+
+ - (void)didReceiveMemoryWarning
+ {
+ [super didReceiveMemoryWarning];
+ // Dispose of any resources that can be recreated.
+ }
+
+
+
+ /*
+ -(void)textFieldDidBeginEditing:(UITextField *)textField
+ {
+ 
+ if ([[amountField text]length] == 0){
+ amountField.text = [[NSLocale currentLocale]objectForKey:NSLocaleCurrencySymbol];
+ }
+ }
+ 
+ -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+ {
+ 
+ NSString *currencyPlaceholder = [amountField.text stringByReplacingCharactersInRange:range withString:string];
+ 
+ if (![currencyPlaceholder hasPrefix:[[NSLocale currentLocale]objectForKey:NSLocaleCurrencySymbol]]) {
+ return NO;
+ }
+ 
+ return YES;
+ }
+*/
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{  //these 2 methods dismiss the firstResponder for the textfiels - hence
+                                                        //dismissing the keyboard. This method is a UITextFieldDelegate method
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (IBAction)hideKeyboard:(id)sender {                   //Hidden button to dismiss keyboard if screen is pressed.
+    
+    [dateField resignFirstResponder];
+    [categoryField resignFirstResponder];
+    [amountField resignFirstResponder];
+}
+
+
+
+
+-(IBAction)addIncome:(id)sender //method to save the income object.
 {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-}*/
 
--(IBAction)addFinanceObject:(id)sender {
+    dateFormat = [[NSDateFormatter alloc]init];
+    [dateFormat setDateFormat:@"dd-MMM-yyyy"];
+    [self.income setIncomeDate:[dateFormat dateFromString:[dateField text]]];
+     
+    [self.income setIncomeCategory:[categoryField text]];
     
-    //format NSString of DateTextField to NSNumber
-    NSNumberFormatter *numberFormat = [[NSNumberFormatter alloc]init];
+    
+    NSNumberFormatter *numberFormat = [[NSNumberFormatter alloc]init]; //using a number format to parse number to
     [numberFormat setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSNumber *incomeTemporaryNumber = [numberFormat numberFromString:[incomeAmount text]];
+    [self.income setIncomeAmount:[numberFormat numberFromString:[amountField text]]];
     
-    dateOfInput = [self dateOfInput];
-    categoryOfInput = [incomeCategory text];
-    amountOfInput = incomeTemporaryNumber;
+    [[self delegate]addIncomeViewControllerDidSave]; //adding the delegate object to save the object
+
     
-    NSManagedObject *financeObject = [NSEntityDescription insertNewObjectForEntityForName:@"Income" inManagedObjectContext:[self managedObjectContext]];
+}
+
+- (IBAction)cancel:(id)sender { //ensures that object isn't saved if cancelled.
     
-    [financeObject setValue:dateOfInput forKey:@"incomeDate"];
-    [financeObject setValue:categoryOfInput forKey:@"incomeCategory"];
-    [financeObject setValue:amountOfInput forKey:@"incomeAmount"];
-    
-    
-    //objectArray = [[NSMutableArray alloc]init];
-    
-    NSLog(@"Date = %@\nCategory = %@\nAmount = %@", dateOfInput, categoryOfInput, amountOfInput);
-   
-    
-    
-    
-    
-    
-    //[[self navigationController]popToRootViewControllerAnimated:YES];
+    [[self delegate]addIncomeViewControllerDidCancel:[self income]];
+    //using the delegate to cancel adding the object.
     
 }
 

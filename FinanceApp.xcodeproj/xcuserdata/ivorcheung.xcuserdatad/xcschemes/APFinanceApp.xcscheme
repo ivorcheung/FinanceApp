@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "58FB658C1847D1110066CC1E"
                BuildableName = "APFinanceApp.app"
-               BlueprintName = "APFinanceApp"
-               ReferencedContainer = "container:APFinanceApp.xcodeproj">
+               BlueprintName = "FinanceApp"
+               ReferencedContainer = "container:FinanceApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "58FB65AC1847D1110066CC1E"
                BuildableName = "APFinanceAppTests.xctest"
-               BlueprintName = "APFinanceAppTests"
-               ReferencedContainer = "container:APFinanceApp.xcodeproj">
+               BlueprintName = "FinanceAppTests"
+               ReferencedContainer = "container:FinanceApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58FB658C1847D1110066CC1E"
             BuildableName = "APFinanceApp.app"
-            BlueprintName = "APFinanceApp"
-            ReferencedContainer = "container:APFinanceApp.xcodeproj">
+            BlueprintName = "FinanceApp"
+            ReferencedContainer = "container:FinanceApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58FB658C1847D1110066CC1E"
             BuildableName = "APFinanceApp.app"
-            BlueprintName = "APFinanceApp"
-            ReferencedContainer = "container:APFinanceApp.xcodeproj">
+            BlueprintName = "FinanceApp"
+            ReferencedContainer = "container:FinanceApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58FB658C1847D1110066CC1E"
             BuildableName = "APFinanceApp.app"
-            BlueprintName = "APFinanceApp"
-            ReferencedContainer = "container:APFinanceApp.xcodeproj">
+            BlueprintName = "FinanceApp"
+            ReferencedContainer = "container:FinanceApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

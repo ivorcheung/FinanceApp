@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-@implementation AppDelegate 
+@implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -17,6 +17,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+       
+    [[UINavigationBar appearance] setBarTintColor:/*[UIColor colorWithRed:0.204 green:0.596 blue:0.859 alpha:1.0]*/[UIColor colorWithRed:0.161 green:0.502 blue:0.725 alpha:1.0]]; //set the navigation bar colour
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; //set the status to white (the time, battery and
+                                                                                    //the signal/carrier at the top of the bar)
+
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]]; //set the nav bar items text colour (the side bar buttons)
+    
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+    
+    [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,[UIFont fontWithName:@"Avenir-Heavy" size:21.0], NSFontAttributeName, nil]]; //sets the navigation bar attributes - changes the colour, font and font colour/size.
+    
+    UINavigationController *nav = (UINavigationController *)self.window.rootViewController; //declaring the navigation controller as
+                                                                                            //rootviewcontroller
+    
+    IncomeTableViewController *itvc = (IncomeTableViewController *)[[nav viewControllers]objectAtIndex:0];
+    itvc.managedObjectContext = [self managedObjectContext];    //declaring the incomeTableViewController as the managedObjectContext
+    
+    ExpenseTableViewController *etvc = (ExpenseTableViewController *) [[nav viewControllers]objectAtIndex:0];
+    etvc.managedObjectContext = [self managedObjectContext];    //declaring the expenseTableViewController as the managedObjectContext
+
     return YES;
 }
 

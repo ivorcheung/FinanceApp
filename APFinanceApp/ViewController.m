@@ -14,10 +14,21 @@
 
 @implementation ViewController
 
+@synthesize managedObjectContext = _managedObjectContext, expenseButton, incomeButton;
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+    
+    //this method ensures that the destination view controller (the one it segues to)
+    //will continue to use the class managedObjectContext.
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning

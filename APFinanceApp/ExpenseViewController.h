@@ -10,29 +10,38 @@
 #import "expense.h"
 #import <CoreData/CoreData.h>
 
-@interface ExpenseViewController : UIViewController <UITextFieldDelegate>
+@protocol addExpenseViewControllerDelegate;
 
-{
-    
-}
+@interface ExpenseViewController: UIViewController <UITextFieldDelegate>
 
-//Outlets for the input
-@property (weak, nonatomic) IBOutlet UITextField *inputDate;
-@property (weak, nonatomic) IBOutlet UITextField *inputCategory;
-@property (weak, nonatomic) IBOutlet UITextField *inputAmount;
 
-//variables for the input
+
+@property (weak, nonatomic) IBOutlet UITextField *dateField;
+@property (weak, nonatomic) IBOutlet UITextField *categoryField;
+@property (weak, nonatomic) IBOutlet UITextField *amountField;
+
+@property (nonatomic, weak) id <addExpenseViewControllerDelegate> delegate;
+
+@property (nonatomic, strong) Expense *expense;
+
 @property (nonatomic, strong) NSDate *dateOfInput;
-@property (nonatomic, strong) NSString *categoryOfInput;
-@property (nonatomic, strong) NSNumber *amountOfInput;
-@property (nonatomic, strong) NSString *typeOfInput;
-
-@property (nonatomic, strong) NSMutableArray *objectArray;
 
 @property (nonatomic, strong) NSDateFormatter *dateFormat;
-@property (nonatomic, strong) NSDate *incomeTemporaryDate;
-@property (strong, nonatomic) UIDatePicker *datePicker;
+@property (nonatomic, strong) UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UIImageView *logo;
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+
+- (IBAction)hideKeyboard:(id)sender;
+- (IBAction)addExpense:(id)sender;
+- (IBAction)cancel:(id)sender;
+
+@end
+
+@protocol addExpenseViewControllerDelegate
+
+-(void)addExpenseViewControllerDidSave;
+-(void)addExpenseViewControllerDidCancel:(Expense *)expenseToDelete;
 
 @end
