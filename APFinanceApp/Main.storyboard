@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller - AP Finance-->
+        <!--View Controller - Finance-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.14509804549999999" green="0.73725491759999995" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="AP Finance" id="Tsg-JN-cQV"/>
+                    <navigationItem key="navigationItem" title="Finance" id="Tsg-JN-cQV"/>
                     <connections>
                         <outlet property="expenseButton" destination="4Ct-rj-H1x" id="rbn-UT-Tfo"/>
                         <outlet property="incomeButton" destination="GIz-Fa-J0i" id="lJs-Y6-MQF"/>

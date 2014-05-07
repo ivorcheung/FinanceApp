@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "58FB658C1847D1110066CC1E"
-               BuildableName = "APFinanceApp.app"
+               BuildableName = "FinanceApp.app"
                BlueprintName = "FinanceApp"
                ReferencedContainer = "container:FinanceApp.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "58FB65AC1847D1110066CC1E"
-               BuildableName = "APFinanceAppTests.xctest"
+               BuildableName = "FinanceAppTests.xctest"
                BlueprintName = "FinanceAppTests"
                ReferencedContainer = "container:FinanceApp.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58FB658C1847D1110066CC1E"
-            BuildableName = "APFinanceApp.app"
+            BuildableName = "FinanceApp.app"
             BlueprintName = "FinanceApp"
             ReferencedContainer = "container:FinanceApp.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58FB658C1847D1110066CC1E"
-            BuildableName = "APFinanceApp.app"
+            BuildableName = "FinanceApp.app"
             BlueprintName = "FinanceApp"
             ReferencedContainer = "container:FinanceApp.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58FB658C1847D1110066CC1E"
-            BuildableName = "APFinanceApp.app"
+            BuildableName = "FinanceApp.app"
             BlueprintName = "FinanceApp"
             ReferencedContainer = "container:FinanceApp.xcodeproj">
          </BuildableReference>
